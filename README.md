@@ -8,18 +8,18 @@ Neid andmeid saab võrrelda graafi kujul, mis visualiseerib kasutaja jaoks oma m
 
 ### Projekti funktsionaalsused
 
-1. Kasutaja loomine (registreerimine)
-
-2. Sisse logimine
-
-3. Piltide üleslaadimine
-
-4. Andmete sisestamine
-
-5. Andmete ja piltide võrdlemine
-
-6. Andmete ja piltide visualiseerimine
-
+* Kasutaja loomine (registreerimine)
+  * Kasutaja saab endale luua rakenduses kasutatava konto, mille kaudu ta saab andmeid salvestada.
+* Sisse logimine
+  * Kui kasutajal on konto olemas, saab ta parooliga oma kontole ligipääsuks sisse logida ja salvestatud andmeid kätte saada.
+* Piltide üleslaadimine
+  * Kasutaja saab oma keha andmete sisestamisel ühele kuupäevale lisada endast pildi faili.
+* Andmete sisestamine
+  * Kasutaja saab oma keha kohta sisestada erinevaid andmeid: kaal, biitsepsi ümbermõõt, käsivarre ümbermõõt, torso ümbermõõt, kõhu ümbermõõt, reie ümbermõõt, sääre ümbermõõt. Lisaks saab ka eraldi toidu kalori sisaldust kokku arvutada ühe päeva peale.
+* Andmete visualiseerimine
+  * Kasutaja poolt sisestatud andmed tehakse kasutaja poolt valitud ajavahemikus graafideks: keha kaalu muutus, keha erinevate ümbermõõtude muutus, keskmine kalori tarbimine. 
+* Andmete ja piltide võrdlemine
+  * Kasutaja saab valida graafilt kaks kuupäeva, kus ta saab pilte ja nendel päevadel sisestatud andmeid võrrelda kõrvuti. Andmete vahel näidatakse ka muutusi.
 ## Projekti autorid
 Karl Piiber\
 Kevin Rosenberg
