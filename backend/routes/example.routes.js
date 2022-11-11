@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const exampleController = require('../controllers/example.controller')
 
-//middleware
-router.use((req, res, next) => {
+// middleware
+/* router.use((req, res, next) => {
     const { name } = req.body
 
     if (name !== 'JohnnyTest') throw new Error('Name does not match')
@@ -15,7 +15,7 @@ router.use((req, res, next) => {
 
     console.log('Time:', Date.now())
     next()
-})
+}) */
 
 const getMiddleWare = (req, res, next) => {
     console.log('Getting DB result for req.user')

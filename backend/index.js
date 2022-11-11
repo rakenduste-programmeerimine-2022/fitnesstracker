@@ -22,7 +22,7 @@ app.use('/examples', exampleRoutes) // example
 app.get('/', (req,res) => { // example
   console.log(req.body)
 
-  res.send('Get / works')
+  res.send('Data: ' + req.params + ', ' + req.body)
 }) 
 
 app.get('/:name', (req, res) => { // example
