@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Box from '@mui/material/Box';
+import { Box, Typography } from '@mui/material';
 
 const Login = () => {
 
     return (
         <Box>
-            
+            <Typography>Login</Typography>
         </Box>
     )
 }
