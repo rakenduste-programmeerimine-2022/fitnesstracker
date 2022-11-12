@@ -3,19 +3,18 @@ const router = express.Router()
 const exampleController = require('../controllers/example.controller')
 
 // middleware
-/* router.use((req, res, next) => {
-    const { name } = req.body
+// router.use((req, res, next) => {
+//     const { email } = req.body
 
-    if (name !== 'JohnnyTest') throw new Error('Name does not match')
+//     if (email !== req.body.email) throw new Error('Access denied')
 
-    req.user = {
-        name: 'JohnnyTest',
-        role: 'Owner',
-    }
+//     req.user = {
+//         email: req.body.email
+//     }
 
-    console.log('Time:', Date.now())
-    next()
-}) */
+//     console.log('Time: ', Date.now())
+//     next()
+// })
 
 const getMiddleWare = (req, res, next) => {
     console.log('Getting DB result for req.user')

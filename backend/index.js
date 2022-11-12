@@ -6,6 +6,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 const exampleRoutes = require('./routes/example.routes') // example
+const accountsRoutes = require('./routes/auth.routes')
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -18,21 +19,7 @@ mongoose
   .catch((e) => console.error(e))
 
 app.use('/examples', exampleRoutes) // example
-
-app.get('/', (req,res) => { // example
-  console.log(req.body)
-
-  res.send('Data: ' + req.params + ', ' + req.body)
-}) 
-
-app.get('/:name', (req, res) => { // example
-  console.log(req.body)
-
-  res.send({
-    params: req.params,
-    body: req.body,
-  })
-})
+app.use('/accounts', accountsRoutes)
 
 app.get('*', (req, res) => {
   res.send('404')
