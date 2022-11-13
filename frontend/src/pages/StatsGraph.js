@@ -14,6 +14,7 @@ const StatsGraph = () => {
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        href="http://localhost:3000/"
                     >
                         {/* add icon component here */}
                     </IconButton>

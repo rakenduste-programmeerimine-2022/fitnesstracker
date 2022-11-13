@@ -4,18 +4,6 @@ import "../BodyTrackingStyles.css";
 
 const BodyTracking = () => {
 
-    const [values, setValues] = React.useState({
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
-        showPassword: false,
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
     return (
         <Box>
             <Box sx={{ flexGrow: 1 }} className="mui-page-title">
@@ -27,6 +15,7 @@ const BodyTracking = () => {
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        href="http://localhost:3000/"
                     >
                         {/* add icon component here */}
                     </IconButton>
@@ -41,6 +30,7 @@ const BodyTracking = () => {
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
+
             <Box className="full-form">
                 <Box>
                     <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
