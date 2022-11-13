@@ -1,4 +1,17 @@
-.menu_container{
+.title-box {
+    background-color: #3B71CA;
+}
+.title-text {
+    color: white;
+}
+.button-bar {
+    display: flex;
+    background-color: #165ccc;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.menu-container{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -12,7 +25,7 @@
     
 }
 
-.menu_button {
+.menu-button {
     display: flex;
     width: 48%;
     height: 200px;
