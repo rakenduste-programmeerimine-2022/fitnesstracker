@@ -1,7 +1,20 @@
 import React, { useState } from "react";
-import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
+import "../BodyTrackingStyles.css";
 
 const BodyTracking = () => {
+
+    const [values, setValues] = React.useState({
+        amount: '',
+        password: '',
+        weight: '',
+        weightRange: '',
+        showPassword: false,
+    });
+
+    const handleChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+    };
 
     return (
         <Box>
@@ -24,10 +37,76 @@ const BodyTracking = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
-            
+
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
+            <Box className="full-form">
+                <Box>
+                    <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
+                </Box>
+                <Box className="body-form">
+                    <TextField
+                        className="body-field"
+                        label="Weight"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Bicep Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Forearm Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Torso Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Waist Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Quad Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Calve Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                </Box>
+            </Box>
+            <Box className="save-button">
+                <Button variant="contained">Save</Button>
+            </Box>
 
         </Box>
     )
