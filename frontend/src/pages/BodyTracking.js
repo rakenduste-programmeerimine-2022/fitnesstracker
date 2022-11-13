@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField} from '@mui/material';
+import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
+import "../BodyTrackingStyles.css";
 
-const CalorieTracking = () => {
+const BodyTracking = () => {
 
     return (
         <Box>
@@ -19,22 +20,25 @@ const CalorieTracking = () => {
                         {/* add icon component here */}
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Fitness Tracker | Calorie Tracking
+                        Fitness Tracker | Body Tracking
                     </Typography>
                     <Button color="inherit">Logout</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
-            
+
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
 
             <Box className="full-form">
+                <Box>
+                    <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
+                </Box>
                 <Box className="body-form">
                     <TextField
                         className="body-field"
-                        label="Calories"
+                        label="Weight"
                         type="number"
                         InputLabelProps={{
                             shrink: true,
@@ -42,7 +46,7 @@ const CalorieTracking = () => {
                     />
                     <TextField
                         className="body-field"
-                        label="Fats"
+                        label="Bicep Circumference"
                         type="number"
                         InputLabelProps={{
                             shrink: true,
@@ -50,7 +54,7 @@ const CalorieTracking = () => {
                     />
                     <TextField
                         className="body-field"
-                        label="Carbonhydrates"
+                        label="Forearm Circumference"
                         type="number"
                         InputLabelProps={{
                             shrink: true,
@@ -58,7 +62,31 @@ const CalorieTracking = () => {
                     />
                     <TextField
                         className="body-field"
-                        label="Protein"
+                        label="Torso Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Waist Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Quad Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        label="Calve Circumference"
                         type="number"
                         InputLabelProps={{
                             shrink: true,
@@ -69,8 +97,9 @@ const CalorieTracking = () => {
             <Box className="save-button">
                 <Button variant="contained">Save</Button>
             </Box>
+
         </Box>
     )
 }
 
-export default CalorieTracking
+export default BodyTracking
