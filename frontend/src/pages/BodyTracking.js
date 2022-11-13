@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Box, Typography, Button } from '@mui/material';
 
-const CalorieTracking = () => {
+const BodyTracking = () => {
 
     return (
         <Box>
-            <Typography>Calorie Tracking</Typography>
+            <Typography>Body Tracking</Typography>
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
@@ -13,4 +13,4 @@ const CalorieTracking = () => {
     )
 }
 
-export default CalorieTracking
+export default BodyTracking
