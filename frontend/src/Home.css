@@ -11,6 +11,10 @@
     margin-bottom: 30px;
 }
 
+.mui-page-title{
+    margin-bottom: 25px;
+}
+
 .menu-container{
     display: flex;
     flex-direction: column;
