@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import PageTitle from '../components/PageTitle';
 
 import '../HomeStyles.css';
 
@@ -17,6 +18,7 @@ const Home = () => {
                 </Button>
             </Box> */}
 
+            {/* MUI page title for home
             <Box sx={{ flexGrow: 1 }} className="mui-page-title">
                 <AppBar position="static">
                     <Toolbar>
@@ -28,7 +30,7 @@ const Home = () => {
                         sx={{ mr: 2 }}
                         href="http://localhost:3000/"
                     >
-                        {/* add icon component here */}
+                        
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Fitness Tracker
@@ -36,7 +38,9 @@ const Home = () => {
                     <Button color="inherit">Logout</Button>
                     </Toolbar>
                 </AppBar>
-            </Box>
+            </Box> */}
+
+            <PageTitle />
 
             <Box className="menu-container">
                 <Box className="menu">
