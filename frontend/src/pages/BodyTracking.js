@@ -132,10 +132,6 @@ const BodyTracking = () => {
                     </Box>
                 </form>
             </Box>
-            {/* <Box className="save-button">
-                <Button variant="contained" type="submit">Save</Button>
-            </Box> */}
-
         </Box>
     )
 }
