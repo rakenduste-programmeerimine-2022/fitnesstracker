@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Box from '@mui/material/Box';
 import './App.css';
+import BodyTracking from './pages/BodyTracking';
 import CalorieTracking from './pages/CalorieTracking';
 import Comparison from './pages/Comparison';
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/bodytrack" element={<BodyTracking />} />
         <Route path="/calorietrack" element={<CalorieTracking />} />
         <Route path="/comparison" element={<Comparison />} />
         <Route path="/login" element={<Login />} />

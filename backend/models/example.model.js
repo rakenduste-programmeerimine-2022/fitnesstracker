@@ -23,7 +23,6 @@ exampleSchema.statics.create = async ({ name, email }) => {
     })
 }
 
-
 const Example = model('ExampleModel', exampleSchema)
 
 module.exports = Example

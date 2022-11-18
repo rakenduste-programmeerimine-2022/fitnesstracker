@@ -10,7 +10,6 @@ const exampleController = require('../controllers/example.controller')
 
 //     req.user = {
 //         email: 'Karl',
-//     }
 
 //     console.log('Time: ', Date.now())
 //     next()

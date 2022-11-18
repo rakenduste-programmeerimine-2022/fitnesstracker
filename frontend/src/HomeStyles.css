@@ -1,0 +1,36 @@
+.title-box {
+    background-color: #3B71CA;
+}
+.title-text {
+    color: white;
+}
+.button-bar {
+    display: flex;
+    background-color: #165ccc;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.mui-page-title{
+    margin-bottom: 25px;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.menu-button {
+    display: flex;
+    width: 48%;
+    height: 200px;
+}
