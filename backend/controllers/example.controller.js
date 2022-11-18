@@ -1,15 +1,14 @@
 const Example = require('../models/example.model')
 
 exports.create = async (req, res) => {
-    const { name } = req.params
-
-    const examp = await Example.create({ name })
-
-    res.send(examp)
+    Example.create(req.body)
+        .then((data) => res.send(`Saved ${data}`))
+        .catch((err) => res.send(`Something went wrong ${err}`))
 }
 
 exports.read = async (req, res) => {
-    const examples = await Example.find({}, {_id: 0, __v: 0})
+    const examples = await Example.find({ email: req.body.email }, {_id: 0, __v: 0})
+    if (!examples) return res.send('Email not found')
     res.send(examples)
 }
 
