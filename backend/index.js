@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 
 const exampleRoutes = require('./routes/example.routes') // example
 const accountsRoutes = require('./routes/auth.routes')
+const bodyRoutes = require('./routes/body.routes')
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -20,6 +21,7 @@ mongoose
 
 app.use('/examples', exampleRoutes) // example
 app.use('/accounts', accountsRoutes)
+app.use('/body', bodyRoutes)
 
 app.get('*', (req, res) => {
   res.send('404')

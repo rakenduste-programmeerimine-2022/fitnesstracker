@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
 import "../BodyTrackingStyles.css";
 
+
 const BodyTracking = () => {
 
     const [inputs, setInputs] = useState({});
@@ -15,6 +16,8 @@ const BodyTracking = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
+        
+        
     }
 
     return (
