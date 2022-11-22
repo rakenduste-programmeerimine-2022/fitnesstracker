@@ -9,6 +9,15 @@ const exampleRoutes = require('./routes/example.routes') // example
 const accountsRoutes = require('./routes/auth.routes')
 const bodyRoutes = require('./routes/body.routes')
 
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
+
 app.use(morgan('dev'))
 app.use(express.json())
 

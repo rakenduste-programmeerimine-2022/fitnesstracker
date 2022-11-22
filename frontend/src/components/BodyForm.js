@@ -35,34 +35,21 @@ const BodyForm = props => {
             quadRef: quadRef.current.value,
             calveRef: calveRef.current.value
         })
-        /* axios({
-            method: 'post',
-            url: 'http://localhost:8080/body/saveinfo',
-            data: {
-              weight: {weightRef},
-              bicep: {bicepRef},
-              forearm: {forearmRef},
-              torso: {torsoRef},
-              waist: {waistRef},
-              quad: {quadRef},
-              calve: {calveRef}
-            }
-          }); */
-          axios.post('http://localhost:8080/body/saveinfo', {
-            weight: {weight},
-            bicep: {bicep},
-            forearm: {forearm},
-            torso: {torso},
-            waist: {waist},
-            quad: {quad},
-            calve: {calve}
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        axios.post('http://localhost:8080/body/saveinfo', {
+        weight: {weight}, /* ValidationError: Cast to string failed for value \"{ weight: '11' }\" (type Object) */
+        bicep: {bicep},
+        forearm: {forearm},
+        torso: {torso},
+        waist: {waist},
+        quad: {quad},
+        calve: {calve}
+        })
+        .then(function (response) {
+        console.log(response);
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
     }
 
     return (
