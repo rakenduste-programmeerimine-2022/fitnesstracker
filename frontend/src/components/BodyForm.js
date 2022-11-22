@@ -1,6 +1,6 @@
 import { FormControl, Box, Button, TextField } from "@mui/material"
 import { useRef, useState, useEffect } from "react"
-
+import axios from 'axios';
 
 const BodyForm = props => {
     const [weight, setWeight] = useState("")
@@ -18,7 +18,7 @@ const BodyForm = props => {
     const waistRef = useRef(null)
     const quadRef = useRef(null)
     const calveRef = useRef(null)
-
+    
     useEffect (() => {
         console.log("renderer")
     }, [weight, bicep, forearm, torso, waist, quad, calve])
@@ -35,6 +35,34 @@ const BodyForm = props => {
             quadRef: quadRef.current.value,
             calveRef: calveRef.current.value
         })
+        /* axios({
+            method: 'post',
+            url: 'http://localhost:8080/body/saveinfo',
+            data: {
+              weight: {weightRef},
+              bicep: {bicepRef},
+              forearm: {forearmRef},
+              torso: {torsoRef},
+              waist: {waistRef},
+              quad: {quadRef},
+              calve: {calveRef}
+            }
+          }); */
+          axios.post('http://localhost:8080/body/saveinfo', {
+            weight: {weight},
+            bicep: {bicep},
+            forearm: {forearm},
+            torso: {torso},
+            waist: {waist},
+            quad: {quad},
+            calve: {calve}
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     return (
