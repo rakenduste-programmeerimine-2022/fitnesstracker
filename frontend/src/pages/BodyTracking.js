@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
 import "../BodyTrackingStyles.css";
-
+import BodyForm from "../components/BodyForm"
 
 const BodyTracking = () => {
 
@@ -17,7 +17,7 @@ const BodyTracking = () => {
         event.preventDefault();
         console.log(inputs);
         
-        
+
     }
 
     return (
@@ -51,7 +51,7 @@ const BodyTracking = () => {
                 <Box>
                     <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
                 </Box>
-                <form className="body-form" onSubmit={handleSubmit}>
+                {/* <form className="body-form" onSubmit={handleSubmit}>
                     
                     <TextField
                         className="body-field"
@@ -133,7 +133,8 @@ const BodyTracking = () => {
                     <Box className="save-button">
                         <Button variant="contained" type="submit">Save</Button>
                     </Box>
-                </form>
+                </form> */}
+                <BodyForm />
             </Box>
         </Box>
     )
