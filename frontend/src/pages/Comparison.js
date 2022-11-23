@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import "../styles/ComparisonStyles.css"
+import Comparable from "../components/Comparable";
 
 const Comparison = () => {
 
@@ -29,12 +31,14 @@ const Comparison = () => {
                 Back
             </Button>
 
-            <Box>
+            <Box className="comparables">
                 <Box>
-                     <Typography>First comparable</Typography>
+                    <Typography>First comparable</Typography>
+                    <Comparable />
                 </Box>
                 <Box>
                     <Typography>Second comparable</Typography>
+                    <Comparable />
                 </Box>    
             </Box>
 
