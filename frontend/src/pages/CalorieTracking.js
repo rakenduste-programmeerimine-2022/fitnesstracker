@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField} from '@mui/material';
+import CalorieForm from "../components/CalorieForm"
 
 const CalorieTracking = () => {
 
@@ -31,43 +32,7 @@ const CalorieTracking = () => {
             </Button>
 
             <Box className="full-form">
-                <Box className="body-form">
-                    <TextField
-                        className="body-field"
-                        label="Calories"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Fats"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Carbonhydrates"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Protein"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                </Box>
-            </Box>
-            <Box className="save-button">
-                <Button variant="contained">Save</Button>
+                <CalorieForm />
             </Box>
         </Box>
     )
