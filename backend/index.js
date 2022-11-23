@@ -7,6 +7,16 @@ const mongoose = require('mongoose')
 
 const exampleRoutes = require('./routes/example.routes') // example
 const accountsRoutes = require('./routes/auth.routes')
+const bodyRoutes = require('./routes/body.routes')
+const nutrientsRoutes = require('./routes/nutrients.routes')
+
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,
+   optionSuccessStatus:200,
+}
+app.use(cors(corsOptions))
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -20,6 +30,8 @@ mongoose
 
 app.use('/examples', exampleRoutes) // example
 app.use('/accounts', accountsRoutes)
+app.use('/body', bodyRoutes)
+app.use('/nutrients', nutrientsRoutes)
 
 app.get('*', (req, res) => {
   res.send('404')

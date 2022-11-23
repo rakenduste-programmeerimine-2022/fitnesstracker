@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
 import "../BodyTrackingStyles.css";
+import BodyForm from "../components/BodyForm"
 
 const BodyTracking = () => {
 
@@ -32,72 +33,11 @@ const BodyTracking = () => {
             </Button>
 
             <Box className="full-form">
-                <Box>
+                <Box> {/* picture upload should be added into form */} 
                     <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
                 </Box>
-                <Box className="body-form">
-                    <TextField
-                        className="body-field"
-                        label="Weight"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Bicep Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Forearm Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Torso Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Waist Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Quad Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        className="body-field"
-                        label="Calve Circumference"
-                        type="number"
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                </Box>
+                <BodyForm />
             </Box>
-            <Box className="save-button">
-                <Button variant="contained">Save</Button>
-            </Box>
-
         </Box>
     )
 }
