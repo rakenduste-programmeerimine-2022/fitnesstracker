@@ -9,11 +9,12 @@ const bodySchema = new Schema(
         torso: { type: Number, required: true},
         waist: { type: Number, required: true},
         quad: { type: Number, required: true},
-        calve: { type: Number, required: true}
+        calve: { type: Number, required: true},
+        date: { type: String, required: true}
     }
 )
 
-bodySchema.statics.saveinfo = async ({ weight, bicep, forearm, torso, waist, quad, calve }) => {
+bodySchema.statics.saveinfo = async ({ weight, bicep, forearm, torso, waist, quad, calve, date }) => {
     return new Promise(async (resolve, reject) => {
         const newBody = new Body({
             weight, 
@@ -22,7 +23,8 @@ bodySchema.statics.saveinfo = async ({ weight, bicep, forearm, torso, waist, qua
             torso, 
             waist, 
             quad, 
-            calve
+            calve,
+            date
         })
 
         newBody.save((err) => {

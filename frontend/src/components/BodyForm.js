@@ -10,6 +10,7 @@ const BodyForm = props => {
     const [waist, setWaist] = useState("")
     const [quad, setQuad] = useState("")
     const [calve, setCalve] = useState("")
+    const [date, setDate] = useState("")
 
     const weightRef = useRef(null)
     const bicepRef = useRef(null)
@@ -18,14 +19,15 @@ const BodyForm = props => {
     const waistRef = useRef(null)
     const quadRef = useRef(null)
     const calveRef = useRef(null)
+    const dateRef = useRef(null)
     
     useEffect (() => {
         console.log("renderer")
-    }, [weight, bicep, forearm, torso, waist, quad, calve])
+    }, [weight, bicep, forearm, torso, waist, quad, calve, date])
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log({ weight, bicep, forearm, torso, waist, quad, calve })
+        console.log({ weight, bicep, forearm, torso, waist, quad, calve, date })
         console.log({
             weightRef: weightRef.current.value,
             bicepRef: bicepRef.current.value,
@@ -33,16 +35,18 @@ const BodyForm = props => {
             torsoRef: torsoRef.current.value,
             waistRef: waistRef.current.value,
             quadRef: quadRef.current.value,
-            calveRef: calveRef.current.value
+            calveRef: calveRef.current.value,
+            dateRef: dateRef.current.value
         })
         axios.post('http://localhost:8080/body/saveinfo', {
-        weight: {weight}, /* ValidationError: Cast to string failed for value \"{ weight: '11' }\" (type Object) */
-        bicep: {bicep},
-        forearm: {forearm},
-        torso: {torso},
-        waist: {waist},
-        quad: {quad},
-        calve: {calve}
+        weight: weightRef.current.value,
+        bicep: bicepRef.current.value,
+        forearm: forearmRef.current.value,
+        torso: torsoRef.current.value,
+        waist: waistRef.current.value,
+        quad: quadRef.current.value,
+        calve: calveRef.current.value,
+        date: dateRef.current.value
         })
         .then(function (response) {
         console.log(response);
@@ -137,6 +141,17 @@ const BodyForm = props => {
                     onChange={e => setCalve(e.target.value)}
                     label="Calve Circumference"
                     type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                <TextField
+                    className="body-field"
+                    value={date}
+                    inputRef={dateRef}
+                    onChange={e => setDate(e.target.value)}
+                    label="Date"
+                    type="date"
                     InputLabelProps={{
                         shrink: true,
                     }}
