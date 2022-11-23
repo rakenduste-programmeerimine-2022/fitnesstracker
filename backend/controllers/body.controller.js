@@ -1,15 +1,9 @@
 const Body = require('../models/bodytrack.model')
 
 exports.saveinfo = async (req, res) => {
-    // const { data } = req.params
-
-    // const sendData = await Body.create({ data })
-
-    // res.send(sendData)
-
     Body.saveinfo(req.body)
         .then((data) => res.send(`Seems to be done ${data}`))
-        .catch((err) => res.send(`Seems to be error ${err}`))
+        .catch((err) => res.send(`There seems to be an error: ${err}`))
 }
 
 exports.getinfo = async (req, res) => {

@@ -39,20 +39,20 @@ const BodyForm = props => {
             dateRef: dateRef.current.value
         })
         axios.post('http://localhost:8080/body/saveinfo', {
-        weight: weightRef.current.value,
-        bicep: bicepRef.current.value,
-        forearm: forearmRef.current.value,
-        torso: torsoRef.current.value,
-        waist: waistRef.current.value,
-        quad: quadRef.current.value,
-        calve: calveRef.current.value,
-        date: dateRef.current.value
+            weight: weightRef.current.value,
+            bicep: bicepRef.current.value,
+            forearm: forearmRef.current.value,
+            torso: torsoRef.current.value,
+            waist: waistRef.current.value,
+            quad: quadRef.current.value,
+            calve: calveRef.current.value,
+            date: dateRef.current.value
         })
         .then(function (response) {
-        console.log(response);
+            console.log(response);
         })
         .catch(function (error) {
-        console.log(error);
+            console.log(error);
         });
     }
 

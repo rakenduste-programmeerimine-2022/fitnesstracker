@@ -30,18 +30,18 @@ const CalorieForm = props => {
            proteinRef: proteinRef.current.value,
            dateRef: dateRef.current.value 
         })
-        axios.post('http://localhost:8080/blablablalblabla', {
-        calories: caloriesRef.current.value,
-        fats: fatsRef.current.value,
-        carbs: carbsRef.current.value,
-        protein: proteinRef.current.value,
-        date: dateRef.current.value
+        axios.post('http://localhost:8080/nutrients/savenutrients', {
+            calories: caloriesRef.current.value,
+            fats: fatsRef.current.value,
+            carbs: carbsRef.current.value,
+            protein: proteinRef.current.value,
+            date: dateRef.current.value
         })
         .then(function (response) {
-        console.log(response);
+            console.log(response);
         })
         .catch(function (error) {
-        console.log(error);
+            console.log(error);
         });
     }
 
