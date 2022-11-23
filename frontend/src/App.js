@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Box from '@mui/material/Box';
-import './App.css';
+import './styles/App.css';
 import BodyTracking from './pages/BodyTracking';
 import CalorieTracking from './pages/CalorieTracking';
 import Comparison from './pages/Comparison';

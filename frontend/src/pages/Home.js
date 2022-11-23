@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
 import PageTitle from '../components/PageTitle';
-import '../HomeStyles.css';
+import '../styles/HomeStyles.css';
 
 const Home = () => {
 

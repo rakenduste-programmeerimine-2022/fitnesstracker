@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton, TextField } from '@mui/material';
-import "../BodyTrackingStyles.css";
+import "../styles/BodyTrackingStyles.css";
 import BodyForm from "../components/BodyForm"
 
 const BodyTracking = () => {

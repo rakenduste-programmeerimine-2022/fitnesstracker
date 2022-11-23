@@ -1,4 +1,5 @@
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+const pageTitle = ""
 
 function PageTitle() {
     return (
@@ -16,7 +17,7 @@ function PageTitle() {
                         {/* add icon component here */}
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Fitness Tracker
+                        Fitness Tracker { pageTitle }
                     </Typography>
                     <Button color="inherit">Logout</Button>
                     </Toolbar>

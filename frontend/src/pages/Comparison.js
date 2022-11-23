@@ -25,10 +25,19 @@ const Comparison = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
-            
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
+
+            <Box>
+                <Box>
+                     <Typography>First comparable</Typography>
+                </Box>
+                <Box>
+                    <Typography>Second comparable</Typography>
+                </Box>    
+            </Box>
+
         </Box>
     )
 }
