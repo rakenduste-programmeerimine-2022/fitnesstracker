@@ -14,17 +14,15 @@ const App = () => {
   const [show, setShow] = useState(true)
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/bodytrack" element={<BodyTracking />} />
-        <Route path="/calorietrack" element={<CalorieTracking />} />
-        <Route path="/comparison" element={<Comparison />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/statsgraph" element={<StatsGraph />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/bodytrack" element={<BodyTracking />} />
+      <Route path="/calorietrack" element={<CalorieTracking />} />
+      <Route path="/comparison" element={<Comparison />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/statsgraph" element={<StatsGraph />} />
+    </Routes>
   );
 }
 
