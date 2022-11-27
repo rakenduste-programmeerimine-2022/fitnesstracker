@@ -25,6 +25,6 @@ function PageTitle() {
                 </AppBar>
             </Box>
     )
-  }
+}
 
 export default PageTitle
