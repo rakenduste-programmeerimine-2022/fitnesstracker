@@ -4,11 +4,11 @@ import axios from 'axios';
 
 function Comparable() {
     
-    const [firstComparable, setFirstComparable] = useState("")
-    const [secondComparable, setSecondComparable] = useState("")
+    const [firstComparable, setFirstComparable] = useState(null)
+    const [secondComparable, setSecondComparable] = useState(null)
 
     useEffect(() => {
-        get();
+            get();
     }, []);
     
     const get = async () => {
@@ -31,14 +31,28 @@ function Comparable() {
         <Box>
             <Typography>
                 Weight: {firstComparable.get('weight')}
-                Bicep: {firstComparable.get('bicep')}
-                Forearm: {firstComparable.get('forearm')}
-                Torso: {firstComparable.get('torso')}
-                Waist: {firstComparable.get('waist')}
-                Quad: {firstComparable.get('quad')}
-                Calves: {firstComparable.get('calve')}
-                Date: {firstComparable.get('date')}
             </Typography>
+            {/* <Typography>
+                Bicep: {firstComparable.get('bicep')}
+            </Typography>
+            <Typography>
+                Forearm: {firstComparable.get('forearm')}
+            </Typography>
+            <Typography>
+                Torso: {firstComparable.get('torso')}
+            </Typography>
+            <Typography>
+                Waist: {firstComparable.get('waist')}
+            </Typography>
+            <Typography>
+                Quad: {firstComparable.get('quad')}
+            </Typography>
+            <Typography>
+                Calves: {firstComparable.get('calve')}
+            </Typography>
+            <Typography>
+                Date: {firstComparable.get('date')}
+            </Typography> */}
         </Box>
     )
 }
