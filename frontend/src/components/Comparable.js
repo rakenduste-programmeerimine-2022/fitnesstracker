@@ -4,11 +4,12 @@ import axios from 'axios';
 
 function Comparable() {
     
+    const [isLoading, setLoading] = useState(true)
     const [firstComparable, setFirstComparable] = useState(null)
     const [secondComparable, setSecondComparable] = useState(null)
 
     useEffect(() => {
-            get();
+        get();
     }, []);
     
     const get = async () => {
@@ -23,16 +24,22 @@ function Comparable() {
                 let splitting = lines[i].split(':')
                 resMap.set(splitting[0], splitting[1]) 
             }
-            setFirstComparable(resMap)  
+            setFirstComparable(resMap)
+            setLoading(false)
         });
     }
     
+    if (isLoading) {
+        return (
+            <Typography>Loading...</Typography>
+        )
+    }
     return (
         <Box>
             <Typography>
                 Weight: {firstComparable.get('weight')}
             </Typography>
-            {/* <Typography>
+            <Typography>
                 Bicep: {firstComparable.get('bicep')}
             </Typography>
             <Typography>
@@ -52,7 +59,7 @@ function Comparable() {
             </Typography>
             <Typography>
                 Date: {firstComparable.get('date')}
-            </Typography> */}
+            </Typography>
         </Box>
     )
 }
