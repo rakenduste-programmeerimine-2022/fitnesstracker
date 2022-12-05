@@ -33,9 +33,6 @@ const BodyTracking = () => {
             </Button>
 
             <Box className="full-form">
-                <Box> {/* picture upload should be added into form */} 
-                    <Button className="picture-button" variant="outlined">Uploadable Picture</Button>
-                </Box>
                 <BodyForm />
             </Box>
         </Box>

@@ -6,7 +6,7 @@ function Comparable() {
     
     const [isLoading, setLoading] = useState(true)
     const [firstComparable, setFirstComparable] = useState(null)
-    const [secondComparable, setSecondComparable] = useState(null)
+    const [secondComparable, setSecondComparable] = useState(null) // second comparable will be based on date selection
 
     useEffect(() => {
         get();

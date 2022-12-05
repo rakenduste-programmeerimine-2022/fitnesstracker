@@ -38,7 +38,7 @@ const Comparison = () => {
                 </Box>
                 <Box>
                     <Typography>Second comparable</Typography>
-                    <Comparable />
+                    <Comparable /> {/* Currently displaying same. When user can view only own stats then will add date selection */}
                 </Box>    
             </Box>
 
