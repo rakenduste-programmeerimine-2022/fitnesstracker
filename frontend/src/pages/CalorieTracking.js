@@ -17,7 +17,7 @@ const CalorieTracking = () => {
                         sx={{ mr: 2 }}
                         href="http://localhost:3000/"
                     >
-                        {/* add icon component here */}
+
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Fitness Tracker | Calorie Tracking
@@ -25,7 +25,8 @@ const CalorieTracking = () => {
                     <Button color="inherit">Logout</Button>
                     </Toolbar>
                 </AppBar>
-            </Box>
+            </Box> 
+            
             
             <Button variant="contained" href="http://localhost:3000/">
                 Back

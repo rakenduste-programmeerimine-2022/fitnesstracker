@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import "../styles/ComparisonStyles.css"
+import Comparable from "../components/Comparable";
 
 const Comparison = () => {
 
@@ -25,10 +27,21 @@ const Comparison = () => {
                     </Toolbar>
                 </AppBar>
             </Box>
-            
             <Button variant="contained" href="http://localhost:3000/">
                 Back
             </Button>
+
+            <Box className="comparables">
+                <Box>
+                    <Typography>First comparable</Typography>
+                    <Comparable />
+                </Box>
+                <Box>
+                    <Typography>Second comparable</Typography>
+                    <Comparable /> {/* Currently displaying same. When user can view only own stats then will add date selection */}
+                </Box>    
+            </Box>
+
         </Box>
     )
 }

@@ -23,7 +23,7 @@ const BodyForm = props => {
     
     useEffect (() => {
         console.log("renderer")
-    }, [weight, bicep, forearm, torso, waist, quad, calve, date])
+    }, [ weight, bicep, forearm, torso, waist, quad, calve, date ])
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -68,6 +68,19 @@ const BodyForm = props => {
                     gap: "16px"
                 }}
             >
+                <Box>
+                    <Button
+                        variant="outlined"
+                        component="label"
+                        className="picture-button"
+                    >
+                        Upload File
+                        <input
+                            type="file"
+                            hidden
+                        />
+                    </Button>
+                </Box>
                 <TextField
                     className="body-field"
                     value={weight}
