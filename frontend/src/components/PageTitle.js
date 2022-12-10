@@ -1,5 +1,6 @@
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
 import { Link } from "react-router-dom"
+const pageTitle = ""
 
 function PageTitle() {
     return (
@@ -18,7 +19,7 @@ function PageTitle() {
                         </IconButton>
                     </Link>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Fitness Tracker
+                        Fitness Tracker { pageTitle }
                     </Typography>
                     <Button color="inherit">Logout</Button>
                     </Toolbar>

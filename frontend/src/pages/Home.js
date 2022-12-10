@@ -3,6 +3,7 @@ import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/mater
 import PageTitle from '../components/PageTitle';
 import '../HomeStyles.css';
 import { Link } from "react-router-dom"
+import '../styles/HomeStyles.css';
 
 const Home = () => {
 
