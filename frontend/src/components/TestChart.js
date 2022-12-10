@@ -4,8 +4,8 @@ import { Line } from "react-chartjs-2"
 import axios from "axios"
 
 function TestChart() {
-    const [isLoading, setLoading] = useState(true)
-    const [firstChart, setFirstChart] = useState(null)
+    // const [isLoading, setLoading] = useState(true)
+    // const [firstChart, setFirstChart] = useState(null)
 
     useEffect(() => {
         get();
@@ -18,41 +18,37 @@ function TestChart() {
         })
         .then(function (response) {
             const dataArray = response.data
-            const dataObject = dataArray.find(obj => obj.date)
+            // const dataObject = dataArray.find()
             // const resMap = new Map(Object.entries(dataObject))
-            const userData = {
-                bicep: dataObject.bicep
-            }
+            // const userData = {
+            //     bicep: dataArray.bicep
+            // }
             // setFirstChart(resMap)
-            setLoading(false)
+            // setLoading(false)
 
             const chartData = {
-            labels: ["2020", "2021", "2022"],  // x-axis labels
-            datasets: [
-                {
-                label: 'User Data',
-                data: Object.entries(userData).map(([label, value]) => value),
-                borderColor: 'rgba(75,192,192,1)',
-                fill: false
-                }
-            ]
+                labels: dataArray.map((data) => data.date),
+                datasets: [
+                    {
+                    label: 'User Data',
+                    data: dataArray.map((data) => data.bicep),
+                    backgroundColor: [
+                        "#ffffff"
+                    ],
+                    borderColor: "#165ccc",
+                    borderWidth: 2,
+                    }
+                ]
             };
             return <Line data={chartData} />;
         });
     }
 
-    if (isLoading) {
-        return (
-            <Typography>Loading...</Typography>
-        )
-    }
-
-    // return (
-    //     <Box>
-    //         <Line data={chartData} />
-    //     </Box>
-    // )
-
+    // if (isLoading) {
+    //     return (
+    //         <Typography>Loading...</Typography>
+    //     )
+    // }
 }
 
 export default TestChart
