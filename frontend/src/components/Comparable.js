@@ -18,12 +18,10 @@ function Comparable() {
             responseType: 'json'
         })
         .then(function (response) {
-            const resMap = new Map()
-            let lines = JSON.stringify(response.data[1]).replace("{", "").replace("}", "").replaceAll('"', "").split(',')
-            for (let i = 0; i < lines.length; i++) {
-                let splitting = lines[i].split(':')
-                resMap.set(splitting[0], splitting[1]) 
-            }
+            const dataArray = response.data
+            const dataObject = dataArray.find(obj => obj.date === "2022-11-12")
+            const resMap = new Map(Object.entries(dataObject))
+            console.log(resMap)
             setFirstComparable(resMap)
             setLoading(false)
         });
