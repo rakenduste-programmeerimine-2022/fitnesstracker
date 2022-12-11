@@ -16,11 +16,6 @@ const RegisterForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log({ email, name })
-        console.log({
-            emailRef: emailRef.current.value,
-            nameRef: nameRef.current.value,
-        })
         if (passwordRef.current.value === rePasswordRef.current.value){
             axios.post('http://localhost:8080/accounts/signup', {
                 email: emailRef.current.value,

@@ -4,28 +4,15 @@ import axios from 'axios';
 
 const LoginForm = props => {
     const [email, setEmail] = useState("")
-    const [name, setName] = useState("")
     const [password, setPassword] = useState("")
 
     const emailRef = useRef(null)
-    const nameRef = useRef(null)
     const passwordRef = useRef(null)
     
-    useEffect (() => {
-        console.log("renderer")
-    }, [ email, name, password ])
-
     const handleSubmit = e => {
         e.preventDefault()
-        console.log({ email, name, password })
-        console.log({
-            emailRef: emailRef.current.value,
-            nameRef: nameRef.current.value,
-            passwordRef: passwordRef.current.value,
-        })
-        axios.post('http://localhost:8080/accounts/signup', {
+        axios.post('http://localhost:8080/accounts/login', {
             email: emailRef.current.value,
-            name: nameRef.current.value,
             password: passwordRef.current.value,
         })
         .then(function (response) {
@@ -53,17 +40,6 @@ const LoginForm = props => {
                     inputRef={emailRef}
                     onChange={e => setEmail(e.target.value)}
                     label="Email"
-                    type="string"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="name-field"
-                    value={name}
-                    inputRef={nameRef}
-                    onChange={e => setName(e.target.value)}
-                    label="Name"
                     type="string"
                     InputLabelProps={{
                         shrink: true,

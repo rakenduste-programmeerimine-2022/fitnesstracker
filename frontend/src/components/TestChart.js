@@ -22,12 +22,6 @@ function TestChart() {
             const dataArray = response.data
             const dataDate = dataArray.map((data) => data.date)
             const dataBicep = dataArray.map((data) => data.bicep)
-            // const dataObject = dataArray.find()
-            // const resMap = new Map(Object.entries(dataObject))
-            // const userData = {
-            //     bicep: dataArray.bicep
-            // }
-            // setFirstChart(resMap)
 
             const chartData = {
                 labels: dataDate,
@@ -46,7 +40,6 @@ function TestChart() {
 
             setLoading(false)
             setChartData(chartData)
-            // return <Line data={chartData} />;
         });
     }
 
