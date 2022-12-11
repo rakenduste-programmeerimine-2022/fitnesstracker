@@ -21,7 +21,11 @@ function PageTitle() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Fitness Tracker { pageTitle }
                     </Typography>
-                    <Button color="inherit">Logout</Button>
+                    <Link to="/login">
+                        <Button color="inherit">
+                            Login
+                        </Button>
+                    </Link>
                     </Toolbar>
                 </AppBar>
             </Box>
