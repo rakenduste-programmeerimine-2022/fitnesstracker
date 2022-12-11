@@ -56,6 +56,27 @@ const BodyForm = props => {
         });
     }
 
+    const [picture, setPicture] = useState(null);
+
+    const handlePictureChange = (event) => {
+        const file = event.target.files[0];
+
+        if (!file) {
+        return;
+        }
+
+        if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+            alert('Only JPG and PNG files are allowed.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+        setPicture(event.target.result);
+        };
+        reader.readAsDataURL(file);
+    };
+
     return (
         <form onSubmit={handleSubmit}>
             <FormControl
@@ -63,7 +84,7 @@ const BodyForm = props => {
                     pt: 4,
                     height: "100%",
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
                     alignItems: "center",
                     gap: "16px"
                 }}
@@ -77,100 +98,111 @@ const BodyForm = props => {
                         Upload File
                         <input
                             type="file"
+                            onChange={handlePictureChange}
+                            accept="image/jpeg, image/png"
                             hidden
                         />
                     </Button>
                 </Box>
-                <TextField
-                    className="body-field"
-                    value={weight}
-                    inputRef={weightRef}
-                    onChange={e => setWeight(e.target.value)}
-                    label="Weight"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={bicep}
-                    inputRef={bicepRef}
-                    onChange={e => setBicep(e.target.value)}
-                    label="Bicep Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={forearm}
-                    inputRef={forearmRef}
-                    onChange={e => setForearm(e.target.value)}
-                    label="Forearm Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={torso}
-                    inputRef={torsoRef}
-                    onChange={e => setTorso(e.target.value)}
-                    label="Torso Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={waist}
-                    inputRef={waistRef}
-                    onChange={e => setWaist(e.target.value)}
-                    label="Waist Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={quad}
-                    inputRef={quadRef}
-                    onChange={e => setQuad(e.target.value)}
-                    label="Quad Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={calve}
-                    inputRef={calveRef}
-                    onChange={e => setCalve(e.target.value)}
-                    label="Calve Circumference"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    className="body-field"
-                    value={date}
-                    inputRef={dateRef}
-                    onChange={e => setDate(e.target.value)}
-                    label="Date"
-                    type="date"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <Box className="save-button">
-                    <Button variant="contained" type="submit">Save</Button>
+                <Box className="displayPicture">
+                    {picture && <img src={picture} style={{
+                        width: 450,
+                        height: 500,
+                        objectFit: 'cover',
+                    }} alt="Selected picture" />}
+                </Box>
+                <Box className="body-form">
+                    <TextField
+                        className="body-field"
+                        value={weight}
+                        inputRef={weightRef}
+                        onChange={e => setWeight(e.target.value)}
+                        label="Weight"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={bicep}
+                        inputRef={bicepRef}
+                        onChange={e => setBicep(e.target.value)}
+                        label="Bicep Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={forearm}
+                        inputRef={forearmRef}
+                        onChange={e => setForearm(e.target.value)}
+                        label="Forearm Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={torso}
+                        inputRef={torsoRef}
+                        onChange={e => setTorso(e.target.value)}
+                        label="Torso Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={waist}
+                        inputRef={waistRef}
+                        onChange={e => setWaist(e.target.value)}
+                        label="Waist Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={quad}
+                        inputRef={quadRef}
+                        onChange={e => setQuad(e.target.value)}
+                        label="Quad Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={calve}
+                        inputRef={calveRef}
+                        onChange={e => setCalve(e.target.value)}
+                        label="Calve Circumference"
+                        type="number"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <TextField
+                        className="body-field"
+                        value={date}
+                        inputRef={dateRef}
+                        onChange={e => setDate(e.target.value)}
+                        label="Date"
+                        type="date"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                    />
+                    <Box className="save-button">
+                        <Button variant="contained" type="submit">Save</Button>
+                    </Box>
                 </Box>
             </FormControl>
         </form>

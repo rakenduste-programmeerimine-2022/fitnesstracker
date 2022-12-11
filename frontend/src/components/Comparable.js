@@ -1,4 +1,4 @@
-import { Box, Modal, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -7,6 +7,9 @@ function Comparable() {
     const [isLoading, setLoading] = useState(true)
     const [firstComparable, setFirstComparable] = useState(null)
     const [secondComparable, setSecondComparable] = useState(null) // second comparable will be based on date selection
+
+    const [dates, setDates] = useState(null)
+    const [selectedDate, setSelectedDate] = useState("2022-11-22");
 
     useEffect(() => {
         get();
@@ -18,16 +21,19 @@ function Comparable() {
             responseType: 'json'
         })
         .then(function (response) {
-            const resMap = new Map()
-            let lines = JSON.stringify(response.data[1]).replace("{", "").replace("}", "").replaceAll('"', "").split(',')
-            for (let i = 0; i < lines.length; i++) {
-                let splitting = lines[i].split(':')
-                resMap.set(splitting[0], splitting[1]) 
-            }
+            const dataArray = response.data
+            const dataObject = dataArray.find(obj => obj.date === selectedDate)
+            const resMap = new Map(Object.entries(dataObject))
             setFirstComparable(resMap)
+            setDates(response.data.map(entry => entry.date))
             setLoading(false)
         });
     }
+        
+    const handleChange = event => {
+        setSelectedDate(event.target.value);
+        get();
+    };
     
     if (isLoading) {
         return (
@@ -60,6 +66,19 @@ function Comparable() {
             <Typography>
                 Date: {firstComparable.get('date')}
             </Typography>
+
+            <form>
+            <label>
+                Select a date:
+                <select onChange={handleChange}>
+                {dates.map(date => (
+                    <option key={date} value={date}>
+                    {date}
+                    </option>
+                ))}
+                </select>
+            </label>
+            </form>
         </Box>
     )
 }
