@@ -1,34 +1,24 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
+import { Link } from "react-router-dom"
+import PageTitle from '../components/PageTitle';
+// import BodyChart from '../components/BodyChart'
+import TestChart from '../components/TestChart'
 
 const StatsGraph = () => {
 
     return (
         <Box>
-            <Box sx={{ flexGrow: 1 }} className="mui-page-title">
-                <AppBar position="static">
-                    <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                        href="http://localhost:3000/"
-                    >
-                        {/* add icon component here */}
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Fitness Tracker | Statistics Graph
-                    </Typography>
-                    <Button color="inherit">Logout</Button>
-                    </Toolbar>
-                </AppBar>
+            <PageTitle />
+
+            <Link to="/">
+                <Button variant="contained">
+                    Back
+                </Button>
+            </Link>
+            <Box style={{ width: 700 }}>
+                <TestChart />
             </Box>
-            
-            <Button variant="contained" href="http://localhost:3000/">
-                Back
-            </Button>
         </Box>
     )
 }

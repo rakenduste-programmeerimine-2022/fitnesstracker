@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
 import PageTitle from '../components/PageTitle';
+import { Link } from "react-router-dom"
 import '../styles/HomeStyles.css';
 
 const Home = () => {
@@ -21,20 +22,28 @@ const Home = () => {
 
             <Box className="menu-container">
                 <Box className="menu">
-                    <Button className="menu-button" variant="contained" href="http://localhost:3000/bodytrack">
-                        Track Body
-                    </Button>
-                    <Button className="menu-button" variant="contained" href="http://localhost:3000/calorietrack">
-                        Track Calories
-                    </Button>
+                    <Link to="/bodytrack">
+                        <Button className="menu-button" variant="contained">
+                            Track Body
+                        </Button>
+                    </Link>
+                    <Link to="/calorietrack">
+                        <Button className="menu-button" variant="contained">
+                            Track Calories
+                        </Button>
+                    </Link>
                 </Box>
                 <Box className="menu">
-                    <Button className="menu-button" variant="contained" href="http://localhost:3000/statsgraph">
-                        Statistics Graph
-                    </Button>
-                    <Button className="menu-button" variant="contained" href="http://localhost:3000/comparison">
-                        Statistics Comparison
-                    </Button>
+                    <Link to="/statsgraph">
+                        <Button className="menu-button" variant="contained">
+                            Statistics Graph
+                        </Button>
+                    </Link>
+                    <Link to="/comparison">
+                        <Button className="menu-button" variant="contained">
+                            Statistics Comparison
+                        </Button>
+                    </Link>
                 </Box>
             </Box>
         </Box>
