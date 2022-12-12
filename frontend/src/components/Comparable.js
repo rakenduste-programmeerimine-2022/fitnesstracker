@@ -73,7 +73,7 @@ function Comparable() {
                 <select onChange={handleChange}>
                 {dates.map(date => (
                     <option key={date} value={date}>
-                    {date}
+                    {date}   {/* shows wrong date compared to the one on statistics comparison */}
                     </option>
                 ))}
                 </select>

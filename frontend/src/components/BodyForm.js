@@ -11,6 +11,7 @@ const BodyForm = props => {
     const [quad, setQuad] = useState("")
     const [calve, setCalve] = useState("")
     const [date, setDate] = useState("")
+    /* const [image, setImage] = useState("") */
 
     const weightRef = useRef(null)
     const bicepRef = useRef(null)
@@ -20,6 +21,7 @@ const BodyForm = props => {
     const quadRef = useRef(null)
     const calveRef = useRef(null)
     const dateRef = useRef(null)
+    /* const imageRef =useRef(null) */
     
     useEffect (() => {
         console.log("renderer")
@@ -37,6 +39,7 @@ const BodyForm = props => {
             quadRef: quadRef.current.value,
             calveRef: calveRef.current.value,
             dateRef: dateRef.current.value
+            /* imageRef:  */
         })
         axios.post('http://localhost:8080/body/saveinfo', {
             weight: weightRef.current.value,
@@ -47,6 +50,7 @@ const BodyForm = props => {
             quad: quadRef.current.value,
             calve: calveRef.current.value,
             date: dateRef.current.value
+            /* image:  */
         })
         .then(function (response) {
             console.log(response);
@@ -60,7 +64,7 @@ const BodyForm = props => {
 
     const handlePictureChange = (event) => {
         const file = event.target.files[0];
-
+        
         if (!file) {
         return;
         }
@@ -75,6 +79,7 @@ const BodyForm = props => {
         setPicture(event.target.result);
         };
         reader.readAsDataURL(file);
+        console.log(reader.readAsDataURL(file))
     };
 
     return (
