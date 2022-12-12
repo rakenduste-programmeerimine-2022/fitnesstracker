@@ -40,7 +40,7 @@ const LoginForm = props => {
                     inputRef={emailRef}
                     onChange={e => setEmail(e.target.value)}
                     label="Email"
-                    type="string"
+                    type="email"
                     InputLabelProps={{
                         shrink: true,
                     }}

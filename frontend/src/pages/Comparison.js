@@ -16,6 +16,7 @@ const Comparison = () => {
                     Back
                 </Button>
             </Link>
+            
             <Box className="comparables">
                 <Box>
                     <Typography>First comparable</Typography>
@@ -26,7 +27,6 @@ const Comparison = () => {
                     <Comparable /> {/* Currently displaying same. When user can view only own stats then will add date selection */}
                 </Box>    
             </Box>
-
         </Box>
     )
 }
