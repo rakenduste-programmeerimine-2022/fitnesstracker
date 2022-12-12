@@ -19,11 +19,13 @@ const Login = () => {
             <Box className="full-form">
                 <LoginForm />
             </Box>
-            <Link to="/register">
-                <Button variant="contained">
-                    Register
-                </Button>
-            </Link>
+            <Box className="save-button">
+                <Link to="/register">
+                    <Button variant="contained">
+                        Register
+                    </Button>
+                </Link>
+            </Box>
         </Box>
     )
 }
