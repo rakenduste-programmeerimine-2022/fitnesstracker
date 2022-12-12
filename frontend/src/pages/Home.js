@@ -8,16 +8,6 @@ const Home = () => {
 
     return (
         <Box>
-            {/* alternative page title
-            <Box className="title-box">
-                <Typography className="title-text" align="center" variant="h2">Fitness Tracker</Typography>
-            </Box>
-            <Box className="button-bar">
-                <Button className="logout" variant="contained" href="" disabled>
-                    Log Out
-                </Button>
-            </Box> */}
-
             <PageTitle />
 
             <Box className="menu-container">

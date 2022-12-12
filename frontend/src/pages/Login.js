@@ -9,11 +9,13 @@ const Login = () => {
     return (
         <Box>
             <PageTitle />
+
             <Link to="/">
                 <Button variant="contained">
                     Back
                 </Button>
             </Link>
+            
             <Box className="full-form">
                 <LoginForm />
             </Box>
