@@ -6,33 +6,39 @@ function Comparable() {
     
     const [isLoading, setLoading] = useState(true)
     const [firstComparable, setFirstComparable] = useState(null)
-    const [secondComparable, setSecondComparable] = useState(null) // second comparable will be based on date selection
 
     const [dates, setDates] = useState(null)
-    const [selectedDate, setSelectedDate] = useState("2022-11-22");
 
     useEffect(() => {
-        get();
+        get("");
     }, []);
     
-    const get = async () => {
+    const get = async (selectedDate) => {
         await axios
         .get(`http://localhost:8080/body/getinfo`, {
             responseType: 'json'
         })
         .then(function (response) {
             const dataArray = response.data
-            const dataObject = dataArray.find(obj => obj.date === selectedDate)
+            var setDate = ""
+            setDates(dataArray.map(entry => entry.date))
+
+            if (selectedDate === "") {
+                setDate = dataArray.map(entry => entry.date)[0]
+            } else {
+                setDate = selectedDate
+            }
+
+            const dataObject = dataArray.find(obj => obj.date === setDate)
             const resMap = new Map(Object.entries(dataObject))
             setFirstComparable(resMap)
-            setDates(response.data.map(entry => entry.date))
+
             setLoading(false)
         });
     }
         
     const handleChange = event => {
-        setSelectedDate(event.target.value);
-        get();
+        get(event.target.value);
     };
     
     if (isLoading) {
@@ -73,7 +79,7 @@ function Comparable() {
                 <select onChange={handleChange}>
                 {dates.map(date => (
                     <option key={date} value={date}>
-                    {date}
+                    {date}   {/* shows wrong date compared to the one on statistics comparison - it is one step behind */}
                     </option>
                 ))}
                 </select>
