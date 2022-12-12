@@ -33,8 +33,6 @@ function Comparable() {
             const resMap = new Map(Object.entries(dataObject))
             setFirstComparable(resMap)
 
-            console.log(dataArray.map(entry => entry.date))
-
             setLoading(false)
         });
     }
