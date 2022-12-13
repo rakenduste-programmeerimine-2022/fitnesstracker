@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/material';
 import { Link } from "react-router-dom"
 import PageTitle from '../components/PageTitle';
-import TestChart from '../components/TestChart'
+import BodyChart from '../components/BodyChart'
 
 const StatsGraph = () => {
 
@@ -17,7 +17,7 @@ const StatsGraph = () => {
             </Link>
             
             <Box style={{ width: 700 }}>
-                <TestChart />
+                <BodyChart />
             </Box>
         </Box>
     )
