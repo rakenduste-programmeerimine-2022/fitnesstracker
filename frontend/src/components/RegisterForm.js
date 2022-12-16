@@ -83,7 +83,7 @@ const RegisterForm = props => {
                     value={rePassword}
                     inputRef={rePasswordRef}
                     onChange={e => setRePassword(e.target.value)}
-                    label="Password"
+                    label="Confirm Password"
                     type="password"
                     InputLabelProps={{
                         shrink: true,
