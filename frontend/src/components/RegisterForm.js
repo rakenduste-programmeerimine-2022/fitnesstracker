@@ -89,7 +89,7 @@ const RegisterForm = props => {
                         shrink: true,
                     }}
                 />
-                <Box className="save-button">
+                <Box>
                     <Button variant="contained" type="submit">Register</Button>
                 </Box>
             </FormControl>

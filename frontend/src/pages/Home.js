@@ -22,8 +22,6 @@ const Home = () => {
                             Track Calories
                         </Button>
                     </Link>
-                </Box>
-                <Box className="menu">
                     <Link to="/statsgraph">
                         <Button className="menu-button" variant="contained">
                             Statistics Graph

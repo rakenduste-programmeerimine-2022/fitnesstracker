@@ -84,17 +84,8 @@ const BodyForm = props => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <FormControl
-                sx={{
-                    pt: 4,
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    gap: "16px"
-                }}
-            >
-                <Box>
+            <Box className="body-form">
+                <Box className="section">
                     <Button
                         variant="outlined"
                         component="label"
@@ -116,7 +107,7 @@ const BodyForm = props => {
                         objectFit: 'cover',
                     }} alt="Selected picture" />}
                 </Box>
-                <Box className="body-form">
+                <Box className="section">
                     <TextField
                         className="body-field"
                         value={weight}
@@ -161,6 +152,8 @@ const BodyForm = props => {
                             shrink: true,
                         }}
                     />
+                </Box>
+                <Box className="section">
                     <TextField
                         className="body-field"
                         value={waist}
@@ -205,11 +198,11 @@ const BodyForm = props => {
                             shrink: true,
                         }}
                     />
-                    <Box className="save-button">
-                        <Button variant="contained" type="submit">Save</Button>
-                    </Box>
                 </Box>
-            </FormControl>
+            </Box>
+            <Box className="save-button">
+                <Button variant="contained" type="submit">Save</Button>
+            </Box>
         </form>
     )
 }

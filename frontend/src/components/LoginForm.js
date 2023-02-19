@@ -1,6 +1,7 @@
 import { FormControl, Box, Button, TextField } from "@mui/material"
 import { useRef, useState, useEffect } from "react"
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const LoginForm = props => {
     const [email, setEmail] = useState("")
@@ -56,8 +57,15 @@ const LoginForm = props => {
                         shrink: true,
                     }}
                 />
-                <Box className="save-button">
+                <Box>
                     <Button variant="contained" type="submit">Login</Button>
+                </Box>
+                <Box>
+                    <Link to="/register">
+                        <Button variant="contained">
+                            Register
+                        </Button>
+                    </Link>
                 </Box>
             </FormControl>
         </form>

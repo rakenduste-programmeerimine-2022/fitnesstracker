@@ -3,6 +3,7 @@ import { Box, Typography, Button, AppBar, Toolbar, IconButton } from '@mui/mater
 import { Link } from "react-router-dom"
 import PageTitle from '../components/PageTitle';
 import BodyChart from '../components/BodyChart'
+import '../styles/ChartStyles.css'
 
 const StatsGraph = () => {
 
@@ -16,7 +17,7 @@ const StatsGraph = () => {
                 </Button>
             </Link>
             
-            <Box style={{ width: 700 }}>
+            <Box className="charts">
                 <BodyChart />
             </Box>
         </Box>

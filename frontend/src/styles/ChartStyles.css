@@ -1,0 +1,7 @@
+.charts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+    gap: 20px;
+}

@@ -1,10 +1,16 @@
 .body-form {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    width: 150px;
-    gap: 25px;
+    flex-direction: row;
+    gap: 16px;
     margin-top: 25px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
 }
 
 .full-form {
@@ -22,7 +28,9 @@
 
 .save-button {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    padding-top: 16px;
 }
 
 .displayImage {

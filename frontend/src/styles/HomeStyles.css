@@ -1,3 +1,8 @@
+a:link, :visited {
+    text-decoration: none;
+    color: white;
+}
+
 .title-box {
     background-color: #3B71CA;
 }
@@ -8,29 +13,28 @@
     display: flex;
     background-color: #165ccc;
     justify-content: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
 }
 
 .mui-page-title{
-    margin-bottom: 25px;
+    margin-bottom: 2vh;
 }
 
 .menu-container{
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    padding-top: 1vh;
 }
 
 .menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 3vh;
     flex-wrap: wrap;
-    
 }
 
 .menu-button {
     display: flex;
-    width: 49vw;
-    height: 200px;
+    width: 48vw;
+    height: 35vh;
 }
